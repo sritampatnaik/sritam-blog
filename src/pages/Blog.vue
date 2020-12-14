@@ -4,15 +4,22 @@
       <h1 v-html="$page.metadata.siteName" />
       <h2 v-html="$page.metadata.siteDescription" />
     </header>
-    <section class="main-body">
-      <g-link to="/blog" class="btn"> Blog &rarr;</g-link>
+    <section class="posts">
+      <PostList
+        v-for="edge in $page.allPost.edges"
+        :key="edge.node.id"
+        :post="edge.node"
+      />
     </section>
-
   </Layout>
 </template>
 
 <script>
+import PostList from "@/components/PostList";
 export default {
+  components: {
+    PostList,
+  },
   metaInfo: {
     title: "A simple blog",
   },
@@ -24,6 +31,20 @@ query {
   metadata {
     siteName
     siteDescription
+  }
+  allPost {
+    totalCount
+    edges {
+      node {
+        id
+        title
+        timeToRead
+        description
+        date (format: "D MMMM YYYY")
+        path
+      }
+    }
+
   }
 }
 </page-query>
@@ -41,9 +62,4 @@ query {
   font-weight: 200;
   font-size: 35px;
 }
-
-.main-body {
-  text-align: center;
-}
-
 </style>

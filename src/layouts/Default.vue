@@ -4,10 +4,8 @@
     <slot />
     <div class="footer">
       <p>
-        Built with
-        <a class="link" href="//gridsome.org">Gridsome</a>
-        & Made with ❤️ by
-        <a class="link" href="//twitter.com/lauragift_">Gift Egwuenu</a>
+        <a class="link" href="//github.com/lauragift21/gridsome-minimal-blog" target="_blank">Gridsome</a> minimal blog, designed by
+        <a class="link" href="//twitter.com/lauragift_" target="_blank">Gift Egwuenu</a>.
       </p>
     </div>
   </main>
@@ -68,10 +66,23 @@ body {
   font-size: 1em;
 }
 
-.link {
-  border: 2px dashed var(--border-color);
+.btn {
+  border: 2px solid var(--border-color);
+  border-radius: 5px;
   padding: 7px;
   color: var(--text-color);
   text-decoration: none;
 }
+
+.btn:hover {
+  background: var(--border-color);
+  color: white;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.link {
+  color: var(--border-color);
+  text-decoration: none;
+}
+
 </style>

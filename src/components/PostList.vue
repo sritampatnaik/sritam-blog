@@ -6,7 +6,7 @@
     <p class="description" v-html="post.description" />
     <b>{{ post.timeToRead }} min read</b> &nbsp;
     <g-link :to="post.path" class="read"
-      >Read More
+      >Read More &rarr;
       <span class="visuallyhidden">about {{ post.title }}</span></g-link
     >
   </div>
@@ -29,10 +29,19 @@ export default {
 }
 
 .read {
+  border: 2px solid var(--border-color);
+  border-radius: 5px;
   padding: 7px;
   color: var(--text-color);
   text-decoration: none;
-  border: 2px dashed var(--border-color);
+  transition: background 0.1s, color 0.1s;
+
+}
+
+.read:hover {
+  background: var(--border-color);
+  color: white;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .visuallyhidden {

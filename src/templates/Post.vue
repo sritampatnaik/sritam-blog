@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <br />
-    <g-link to="/" class="link"> &larr; Go Back</g-link>
+    <g-link to="/blog" class="btn"> &larr; Go Back</g-link>
     <div class="post-title">
       <h1>{{ $page.post.title }}</h1>
       <p class="post-date">
@@ -30,9 +30,9 @@ query Post ($path: String!) {
 .post-title {
   text-align: center;
   font-size: 30px;
-  line-height: 1.4em;
+  line-height: 1.6em;
   padding: 2em 0;
-  font-family: "Stylish";
+  font-family: "Inconsolata";
 }
 
 .post-date {
